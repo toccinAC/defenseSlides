@@ -1,0 +1,62 @@
+\documentclass{beamer}
+\usetheme[hideothersubsections]{Berkeley}
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usetikzlibrary{positioning}
+\usepackage{listings}
+\usepackage{array}
+\usepackage[export]{adjustbox}
+\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+\makeatletter
+\setbeamertemplate{sidebar \beamer@sidebarside}%{sidebar theme}
+  {
+    \beamer@tempdim=\beamer@sidebarwidth%
+    \advance\beamer@tempdim by -6pt%
+    \insertverticalnavigation{\beamer@sidebarwidth}%
+    \vfill
+    \ifx\beamer@sidebarside\beamer@lefttext%
+    \else%
+      \usebeamercolor{normal text}%
+      \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+      \vskip2pt%
+    \fi%
+  }%
+\makeatother
+
+
+\title{Automatic Detection of Pseudo-Tested Methods in a Test Suite Using Fault Injection}
+\author{Nicholas Tocci}
+\date{\today}
+
+\begin{document}
+%%%%%%%%%%%% Introduction %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\begin{frame}
+	\frametitle{Introduction}
+	\titlepage
+\end{frame}
+%%%%%%%%%%%% Problem %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem}
+\label{sec:problem}
+\input{sections/problem}
+
+\section{Pseudo-tested Methods}
+\label{sec:pseudo-tested methods}
+\input{sections/pseudo}
+
+\section{Function-Fiasco}
+\label{sec:function-fiasco}
+\input{sections/ffiasco}
+
+\section{Evaluation Strategy}
+\label{sec:Evaluation Strategy}
+\input{sections/evaluation}
+
+\section{Results}
+\label{sec:Results}
+\input{sections/results}
+
+\section{Conclusion}
+\label{sec:Conclusion}
+\input{sections/conclusion}
+\end{document}

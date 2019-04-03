@@ -1,0 +1,52 @@
+\begin{frame}
+	\frametitle{Pseudo-tested Methods}
+	\begin{center}
+    \huge{Pseudo-tested Methods}
+  \end{center}
+\end{frame}
+
+\subsection{Defintion}
+\begin{frame}
+  \frametitle{Definition}
+    \begin{center}
+      \textbf{What is a Pseudo-tested Method?}
+
+      \vspace{10mm}
+      \includegraphics{images/passing}
+
+      \vspace{10mm}
+      \textbf{\textit{Def}}: It will never fail.
+    \end{center}
+\end{frame}
+
+\subsection{Detection}
+\begin{frame}
+  \frametitle{Detection}
+    \begin{center}
+      \textbf{How Can We Detect Pseudo-tested Methods}
+
+			\vspace{20mm}
+			\textbf{It is harder than you think!}
+
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example of a Pseudo-tested method}
+	\begin{figure}[t!, scale = .75]
+	\begin{lstlisting}[language = Python, basicstyle=\small, backgroundcolor = \color{lightgray}]
+numbers.py:
+def numberOrder(n):
+  numbersSorted = sorted(n)
+  return numbersSorted
+
+
+test_numbers.py:
+def test_numbers_ordered():
+  numbers = set([2,4,3,1])
+  sortedNumbers = set([1,2,3,4])
+  orderedNumbers = numberOrder(numbers)
+  assert numbers == sortedNumbers
+	\end{lstlisting}
+	\end{figure}
+\end{frame}
